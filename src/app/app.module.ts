@@ -4,9 +4,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { AdminComponent } from './layout/admin/admin.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { HeaderComponent } from './layouts/header/header.component';
+import { AdminComponent } from './layouts/admin/admin.component';
+import { FooterComponent } from './layouts/footer/footer.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     AppComponent,
     HeaderComponent,
     AdminComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
