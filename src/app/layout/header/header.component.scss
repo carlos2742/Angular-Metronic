@@ -1,0 +1,34 @@
+.kt-header{
+  box-shadow: 0 0 15px 0 #181824;
+  .kt-menu__link{
+    display: flex;
+    justify-content: center;
+    .arrow-down{
+      display: none;
+      position: absolute;
+      bottom: -35px;
+      border-left: 30px solid #0000;
+      border-right: 30px solid #0000;
+      border-top: 20px solid #181824;
+    }
+  }
+
+  .kt-header-menu-wrapper{
+    box-shadow: none;
+  }
+
+  .kt-header-menu {
+    .kt-menu__nav{
+      &>.kt-menu__item.kt-menu__item--here{
+        &>.kt-menu__link{
+          background-color: transparent;
+          .arrow-down{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+

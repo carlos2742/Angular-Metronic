@@ -1,0 +1,11 @@
+$background-color: transparent;
+.kt-footer{
+  background-color: $background-color;
+  .kt-footer__bottom{
+    background-color: $background-color;
+    .kt-footer__menu{
+      padding: 0 1.25rem 0 1rem;
+    }
+  }
+}
+

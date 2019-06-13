@@ -22,8 +22,8 @@
         "styles.scss"
       ],
       "scripts": [
-        "src/assets/vendors/global/vendors.bundle.js",
-        "src/assets/js/demo2/scripts.bundle.js"
+        "assets/vendors/global/vendors.bundle.js",
+        "assets/js/demo2/scripts.bundle.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
