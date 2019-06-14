@@ -10,11 +10,13 @@ export class HeaderComponent implements OnInit {
   showMobileMenu: boolean;
   showTopBar: boolean;
   selected: string;
+  openItem: string;
 
   constructor() {
     this.showMobileMenu = false;
     this.showTopBar = false;
     this.selected = 'dash';
+    this.openItem = '';
   }
 
   ngOnInit() {
@@ -27,5 +29,13 @@ export class HeaderComponent implements OnInit {
 
   toggleTopBar() {
     this.showTopBar = !this.showTopBar;
+  }
+
+  openMenuItem(item) {
+    this.openItem = item;
+  }
+
+  clearOpenMenuItem() {
+    this.openItem = '';
   }
 }

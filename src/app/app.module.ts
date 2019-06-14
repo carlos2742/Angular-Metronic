@@ -17,6 +17,7 @@ import { AbbreviateNumberPipe } from './pipes/abbreviate-number.pipe';
 import { UserProfileComponent } from './layouts/header/user-profile/user-profile.component';
 import { ToggleClassDirective } from './directives/toggle-class.directive';
 import { SubheaderComponent } from './layouts/subheader/subheader.component';
+import { FiltersComponent } from './widgets/filters/filters.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SubheaderComponent } from './layouts/subheader/subheader.component';
     AbbreviateNumberPipe,
     UserProfileComponent,
     ToggleClassDirective,
-    SubheaderComponent
+    SubheaderComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
