@@ -12,6 +12,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { ChartsComponent } from './widgets/charts/charts.component';
 import { BarComponent } from './widgets/charts/bar/bar.component';
 import { DoughnutComponent } from './widgets/charts/doughnut/doughnut.component';
+import { ListComponent } from './widgets/list/list.component';
+import { AbbreviateNumberPipe } from './pipes/abbreviate-number.pipe';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { DoughnutComponent } from './widgets/charts/doughnut/doughnut.component'
     DashboardComponent,
     ChartsComponent,
     BarComponent,
-    DoughnutComponent
+    DoughnutComponent,
+    ListComponent,
+    AbbreviateNumberPipe
   ],
   imports: [
     BrowserModule,
