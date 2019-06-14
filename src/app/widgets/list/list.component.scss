@@ -1,13 +1,12 @@
-.kt-widget4 .kt-widget4__item:not(:last-child){
-  border-bottom: 1px solid #ebedf2;
-}
+$font-size: 1.5rem;
 .kt-widget4 {
   .kt-widget4__item{
+    font-size: $font-size;
     &:not(:last-child){
       border-bottom: 1px solid #ebedf2;
     }
-    .kt-widget4__title, .kt-widget4__number{
-      font-size: 1.8rem;
+    .kt-widget4__number{
+      font-size: $font-size;
     }
   }
 }

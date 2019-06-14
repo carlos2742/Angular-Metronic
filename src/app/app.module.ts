@@ -14,6 +14,9 @@ import { BarComponent } from './widgets/charts/bar/bar.component';
 import { DoughnutComponent } from './widgets/charts/doughnut/doughnut.component';
 import { ListComponent } from './widgets/list/list.component';
 import { AbbreviateNumberPipe } from './pipes/abbreviate-number.pipe';
+import { UserProfileComponent } from './layouts/header/user-profile/user-profile.component';
+import { ToggleClassDirective } from './directives/toggle-class.directive';
+import { SubheaderComponent } from './layouts/subheader/subheader.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { AbbreviateNumberPipe } from './pipes/abbreviate-number.pipe';
     BarComponent,
     DoughnutComponent,
     ListComponent,
-    AbbreviateNumberPipe
+    AbbreviateNumberPipe,
+    UserProfileComponent,
+    ToggleClassDirective,
+    SubheaderComponent
   ],
   imports: [
     BrowserModule,

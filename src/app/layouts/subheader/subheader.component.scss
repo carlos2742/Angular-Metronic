@@ -1,0 +1,23 @@
+.kt-subheader{
+  background-color: transparent;
+  padding: 3rem 0 0 !important;
+
+  .btn{
+    font-size: 1.2rem;
+    height: auto !important;
+    min-height: 32px;
+    font-weight: normal;
+    padding: 8px 20px;
+    i{
+      font-size: 1.2rem !important;
+    }
+  }
+  .kt-subheader__main{
+    .btn{
+      box-shadow: 0 6px 5px 0px rgba(254, 185, 62, 0.32);
+    }
+  }
+  .btn-label-white{
+    color: #fff
+  }
+}

@@ -34,112 +34,7 @@
       <div class="kt-header__topbar">
 
         <!--begin: User bar -->
-        <div class="kt-header__topbar-item kt-header__topbar-item--user">
-          <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,10px" aria-expanded="false">
-            <span class="kt-header__topbar-welcome">Hello,</span>
-            <span class="kt-header__topbar-username">Charles.</span>
-            <img class="" alt="Pic" src="./assets/media/users/300_12.jpg">
-
-            <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-            <!--<span class="kt-badge kt-badge&#45;&#45;username kt-badge&#45;&#45;unified-success kt-badge&#45;&#45;lg kt-badge&#45;&#45;rounded kt-badge&#45;&#45;bold kt-hidden-">S</span>-->
-          </div>
-          <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
-
-            <!--begin: Head -->
-            <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(./assets/media/misc/bg-1.jpg)">
-              <div class="kt-user-card__avatar">
-                <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_25.jpg">
-
-                <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
-              </div>
-              <div class="kt-user-card__name">
-                Sean Stone
-              </div>
-              <div class="kt-user-card__badge">
-                <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
-              </div>
-            </div>
-
-            <!--end: Head -->
-
-            <!--begin: Navigation -->
-            <div class="kt-notification">
-              <a href="#" class="kt-notification__item">
-                <div class="kt-notification__item-icon">
-                  <i class="flaticon2-calendar-3 kt-font-success"></i>
-                </div>
-                <div class="kt-notification__item-details">
-                  <div class="kt-notification__item-title kt-font-bold">
-                    My Profile
-                  </div>
-                  <div class="kt-notification__item-time">
-                    Account settings and more
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="kt-notification__item">
-                <div class="kt-notification__item-icon">
-                  <i class="flaticon2-mail kt-font-warning"></i>
-                </div>
-                <div class="kt-notification__item-details">
-                  <div class="kt-notification__item-title kt-font-bold">
-                    My Messages
-                  </div>
-                  <div class="kt-notification__item-time">
-                    Inbox and tasks
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="kt-notification__item">
-                <div class="kt-notification__item-icon">
-                  <i class="flaticon2-rocket-1 kt-font-danger"></i>
-                </div>
-                <div class="kt-notification__item-details">
-                  <div class="kt-notification__item-title kt-font-bold">
-                    My Activities
-                  </div>
-                  <div class="kt-notification__item-time">
-                    Logs and notifications
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="kt-notification__item">
-                <div class="kt-notification__item-icon">
-                  <i class="flaticon2-hourglass kt-font-brand"></i>
-                </div>
-                <div class="kt-notification__item-details">
-                  <div class="kt-notification__item-title kt-font-bold">
-                    My Tasks
-                  </div>
-                  <div class="kt-notification__item-time">
-                    latest tasks and projects
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="kt-notification__item">
-                <div class="kt-notification__item-icon">
-                  <i class="flaticon2-cardiogram kt-font-warning"></i>
-                </div>
-                <div class="kt-notification__item-details">
-                  <div class="kt-notification__item-title kt-font-bold">
-                    Billing
-                  </div>
-                  <div class="kt-notification__item-time">
-                    billing &amp; statements <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill kt-badge--rounded">2 pending</span>
-                  </div>
-                </div>
-              </a>
-              <div class="kt-notification__custom kt-space-between">
-                <a href="demo2/custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
-                <a href="demo2/custom/user/login-v2.html" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a>
-              </div>
-            </div>
-
-            <!--end: Navigation -->
-          </div>
-        </div>
-
+        <app-user-profile></app-user-profile>
         <!--end: User bar -->
       </div>
 
@@ -154,25 +49,17 @@
       <div class="kt-header-menu-wrapper" [class.kt-header-menu-wrapper--on]="showMobileMenu" id="kt_header_menu_wrapper" style="opacity: 1;">
         <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile ">
           <ul class="kt-menu__nav ">
-            <li class="kt-menu__item  kt-menu__item--open kt-menu__item--here kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open kt-menu__item--here" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+            <li  class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel" [class.kt-menu__item--here]="selected === 'dash'" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
               <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
                 <span class="kt-menu__link-text">Dashboards</span>
-                <i class="kt-menu__ver-arrow la la-angle-right"></i>
-                <div class="arrow-down"></div>
+                <div class="arrow-down d-none" [class.d-xl-block]="selected === 'dash'"></div>
               </a>
-              <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-                <ul class="kt-menu__subnav">
-                  <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="demo2/index.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Default Dashboard</span></a></li>
-                  <li class="kt-menu__item " aria-haspopup="true"><a href="demo2/dashboards/fluid.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Fluid Dashboard</span></a></li>
-                  <li class="kt-menu__item " aria-haspopup="true"><a href="demo2/dashboards/aside.html" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Aside Dashboard</span></a></li>
-                </ul>
-              </div>
             </li>
-            <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+            <li [appToggleClass]="'kt-menu__item--open'" [class.kt-menu__item--here]="selected === 'repo'" class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
               <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
                 <span class="kt-menu__link-text">Reports</span>
                 <i class="kt-menu__ver-arrow la la-angle-right"></i>
-                <div class="arrow-down"></div>
+                <div class="arrow-down d-none" [class.d-xl-block]="selected === 'repo'"></div>
               </a>
               <div class="kt-menu__submenu  kt-menu__submenu--fixed kt-menu__submenu--left" style="width:1000px">
                 <div class="kt-menu__subnav">
@@ -224,7 +111,12 @@
                 </div>
               </div>
             </li>
-            <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Users</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+            <li [appToggleClass]="'kt-menu__item--open'" [class.kt-menu__item--here]="selected === 'user'" class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+              <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                <span class="kt-menu__link-text">Users</span>
+                <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                <div class="arrow-down d-none" [class.d-xl-block]="selected === 'user'"></div>
+              </a>
               <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                 <ul class="kt-menu__subnav">
                   <li class="kt-menu__item " aria-haspopup="true"><a href="javascript:;" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">Create New Post</span></a></li>
@@ -256,7 +148,12 @@
                 </ul>
               </div>
             </li>
-            <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Admin</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+            <li [appToggleClass]="'kt-menu__item--open'" [class.kt-menu__item--here]="selected === 'admin'" class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+              <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                <span class="kt-menu__link-text">Admin</span>
+                <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                <div class="arrow-down d-none" [class.d-xl-block]="selected === 'admin'"></div>
+              </a>
               <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
                 <ul class="kt-menu__subnav">
                   <li class="kt-menu__item " aria-haspopup="true"><a href="#" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">eCommerce</span></a></li>
