@@ -1,0 +1,7 @@
+<app-bar *ngIf="type==='bar'; else doughnut" [title]="title" [desc]="desc" [data]="data" [chartParams]="chartParams"></app-bar>
+
+<ng-template #doughnut>
+  <app-doughnut [title]="title" [data]="data" [chartParams]="chartParams"></app-doughnut>
+</ng-template>
+
+

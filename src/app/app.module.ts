@@ -8,6 +8,10 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import {AppRoutingModule} from './app-routing.module';
+import { ChartsComponent } from './widgets/charts/charts.component';
+import { BarComponent } from './widgets/charts/bar/bar.component';
+import { DoughnutComponent } from './widgets/charts/doughnut/doughnut.component';
 
 
 @NgModule({
@@ -16,10 +20,14 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     HeaderComponent,
     AdminComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    ChartsComponent,
+    BarComponent,
+    DoughnutComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     NgbModule.forRoot()
   ],
   providers: [],
