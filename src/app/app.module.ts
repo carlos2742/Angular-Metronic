@@ -18,6 +18,8 @@ import { UserProfileComponent } from './layouts/header/user-profile/user-profile
 import { ToggleClassDirective } from './directives/toggle-class.directive';
 import { SubheaderComponent } from './layouts/subheader/subheader.component';
 import { FiltersComponent } from './widgets/filters/filters.component';
+import { DataTableComponent } from './widgets/data-table/data-table.component';
+import { RowToggleDetailDirective } from './widgets/data-table/directives/row-toggle-detail.directive';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { FiltersComponent } from './widgets/filters/filters.component';
     UserProfileComponent,
     ToggleClassDirective,
     SubheaderComponent,
-    FiltersComponent
+    FiltersComponent,
+    DataTableComponent,
+    RowToggleDetailDirective
   ],
   imports: [
     BrowserModule,

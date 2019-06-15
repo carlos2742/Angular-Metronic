@@ -1,0 +1,155 @@
+<div class="kt-portlet__body kt-portlet__body--fit pt-4 pl-5 pr-5">
+
+  <!--begin: Datatable -->
+  <div class="kt-datatable kt-datatable--default kt-datatable--scroll kt-datatable--loaded" id="kt_datatable_latest_orders">
+    <table class="kt-datatable__table" style="display: block; min-height: 500px; max-height: 500px;">
+      <thead class="kt-datatable__head">
+      <tr class="kt-datatable__row" style="left: 0px;">
+        <th class="kt-datatable__cell kt-datatable__toggle-detail d-xl-none"><span></span></th>
+        <th data-field="RecordID" class="d-none d-sm-table-cell kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check">
+          <span style="width: 80px;">
+            <label class="kt-checkbox kt-checkbox--single kt-checkbox--all kt-checkbox--solid">
+              <input type="checkbox">&nbsp;<span></span>
+            </label>
+          </span>
+        </th>
+        <th data-field="Created" class="d-none  d-lg-table-cell kt-datatable__cell kt-datatable__cell--sort kt-datatable__cell--sorted" data-sort="asc">
+          <span style="width: 150px;">Created<i class="flaticon2-arrow-up"></i></span>
+        </th>
+        <th data-field="Link" data-autohide-disabled="false" class="kt-datatable__cell kt-datatable__cell--sort">
+          <span style="width: 150px;">Links</span>
+        </th>
+        <th data-field="Destination" data-autohide-disabled="false" class="d-none d-xl-table-cell kt-datatable__cell kt-datatable__cell--sort">
+          <span style="width: 150px;">Destination</span>
+        </th>
+        <th data-field="Hit" data-autohide-disabled="false" class="d-none d-sm-table-cell kt-datatable__cell kt-datatable__cell--sort">
+          <span style="width: 80px;">Hits</span>
+        </th>
+        <th data-field="Status" class="d-none d-sm-table-cell kt-datatable__cell kt-datatable__cell--sort">
+          <span style="width: 100px;">Status</span>
+        </th>
+        <th data-field="UpdatedDate" class="d-none d-lg-table-cell kt-datatable__cell kt-datatable__cell--sort kt-datatable__cell--sorted" data-sort="asc">
+          <span style="width: 100px;">Update Date<i class="flaticon2-arrow-up"></i></span>
+        </th>
+        <th data-field="Actions" data-autohide-disabled="false" class="kt-datatable__cell kt-datatable__cell--sort">
+          <span style="width: 80px;">Actions</span>
+        </th>
+      </tr>
+      </thead>
+      <tbody style="max-height: 446px;" class="kt-datatable__body ps ps--active-y">
+      <tr data-row="0" class="kt-datatable__row" style="left: 0px;">
+        <td appRowToggleDetail class="kt-datatable__cell kt-datatable__toggle-detail d-xl-none">
+          <div class="kt-datatable__toggle-detail">
+            <i class="fa fa-caret-right"></i>
+            <i class="fa fa-caret-down"></i>
+          </div>
+        </td>
+        <td data-field="RecordID"class="d-none d-sm-table-cell kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check"><span style="width: 80px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="245">&nbsp;<span></span></label></span></td>
+        <td data-field="Created" class="d-none d-lg-table-cell kt-datatable__cell--sorted kt-datatable__cell"><span style="width: 150px;"><span class="kt-font-bold">1/1/2016</span></span></td>
+        <td data-field="Link" data-autohide-disabled="false" class="kt-datatable__cell">
+          <span style="width: 150px;">
+          <div class="kt-user-card-v2">
+            <div class="kt-user-card-v2__details">
+              <span class="kt-user-card-v2__email">drinks.me/256</span>
+            </div>
+          </div>
+        </span>
+        </td>
+        <td data-field="Destination" data-autohide-disabled="false" class="d-none d-xl-table-cell kt-datatable__cell">
+          <span style="width: 150px;">
+          <div class="kt-user-card-v2">
+            <div class="kt-user-card-v2__details">
+              <span class="kt-user-card-v2__email">pernod-ricard.com/bran</span>
+            </div>
+          </div>
+        </span>
+        </td>
+        <td data-field="Hit" data-autohide-disabled="false" class="d-none d-sm-table-cell kt-datatable__cell">
+          <span style="width: 80px;">
+          <div class="kt-user-card-v2">
+            <div class="kt-user-card-v2__details">
+              <span class="kt-user-card-v2__email">303</span>
+            </div>
+          </div>
+        </span>
+        </td>
+        <td data-field="Status" class="d-none d-sm-table-cell kt-datatable__cell"><span style="width: 100px;"><span class="btn btn-bold btn-sm btn-font-sm  btn-label-success">Delivered</span></span></td>
+        <td data-field="UpdatedDate" class="d-none d-lg-table-cell kt-datatable__cell--sorted kt-datatable__cell" ><span style="width: 100px;"><span class="kt-font-bold">1/1/2016</span></span></td>
+        <td data-field="Actions" data-autohide-disabled="false" class="kt-datatable__cell">
+          <span style="overflow: visible; position: relative; width: 80px;">
+            <div class="dropdown" ngbDropdown>
+              <a ngbDropdownToggle data-toggle="dropdown" class="btn btn-sm btn-clean btn-icon btn-icon-md" aria-expanded="false">
+                <i class="flaticon-more-1"></i>
+              </a>
+              <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="display: none; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-22px, 33px, 0px);">
+                <ul class="kt-nav">
+                  <li class="kt-nav__item">
+                    <a class="kt-nav__link" href="#">
+                      <i class="kt-nav__link-icon flaticon2-expand"></i>
+                      <span class="kt-nav__link-text">View</span>
+                    </a>
+                  </li>
+                  <li class="kt-nav__item">
+                    <a class="kt-nav__link" href="#">
+                      <i class="kt-nav__link-icon flaticon2-contract"></i>
+                      <span class="kt-nav__link-text">Edit</span>
+                    </a>
+                  </li>
+                  <li class="kt-nav__item">
+                    <a class="kt-nav__link" href="#">
+                      <i class="kt-nav__link-icon flaticon2-trash"></i>
+                      <span class="kt-nav__link-text">Delete</span>
+                    </a>
+                  </li>
+                  <li class="kt-nav__item">
+                    <a class="kt-nav__link" href="#">
+                      <i class="kt-nav__link-icon flaticon2-mail-1"></i>
+                      <span class="kt-nav__link-text">Export</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </span>
+        </td>
+      </tr>
+      <tr class="kt-datatable__row-detail">
+        <td class="kt-datatable__detail" colspan="7">
+          <table>
+            <tr class="kt-datatable__row d-sm-none">
+              <td class="kt-datatable__cell"><span>#</span></td>
+              <td class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check" data-field="RecordID" style=""><span style="width: 40px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" value="245">&nbsp;<span></span></label></span></td>
+            </tr>
+            <tr class="kt-datatable__row d-lg-none">
+              <td class="kt-datatable__cell"><span>Created</span></td>
+              <td class="kt-datatable__cell--sorted kt-datatable__cell" data-field="ShipDate" style=""><span style="width: 100px;"><span class="kt-font-bold">1/1/2016</span></span></td>
+            </tr>
+            <tr class="kt-datatable__row">
+              <td class="kt-datatable__cell"><span>Destination</span></td>
+              <td class="kt-datatable__cell--sorted kt-datatable__cell" data-field="ShipDate" style=""><span style="width: 100px;"><span class="kt-font-bold">pernod-ricard.com/branch</span></span></td>
+            </tr>
+            <tr class="kt-datatable__row d-sm-none">
+              <td class="kt-datatable__cell"><span>Hit</span></td>
+              <td class="kt-datatable__cell--sorted kt-datatable__cell" data-field="ShipDate" style=""><span style="width: 100px;"><span class="kt-font-bold">303</span></span></td>
+            </tr>
+            <tr class="kt-datatable__row d-sm-none">
+              <td class="kt-datatable__cell"><span>Status</span></td>
+              <td data-field="Status" class="kt-datatable__cell" style=""><span style="width: 100px;"><span class="btn btn-bold btn-sm btn-font-sm  btn-label-success">Delivered</span></span></td>
+            </tr>
+            <tr class="kt-datatable__row d-lg-none">
+              <td class="kt-datatable__cell"><span>Updated Date</span></td>
+              <td class="kt-datatable__cell--sorted kt-datatable__cell" data-field="ShipDate" style=""><span style="width: 100px;"><span class="kt-font-bold">1/1/2016</span></span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="kt-datatable__pager kt-datatable--paging-loaded">
+      <ul class="kt-datatable__pager-nav"><li><a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a></li><li><a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a></li><li style=""></li><li style="display: none;"><input type="text" class="kt-pager-input form-control" title="Page number"></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="4" title="4">4</a></li><li><a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="5" title="5">5</a></li><li></li><li><a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next" data-page="2"><i class="flaticon2-next"></i></a></li><li><a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last" data-page="18"><i class="flaticon2-fast-next"></i></a></li></ul>
+      <div class="kt-datatable__pager-info"><div class="dropdown bootstrap-select kt-datatable__pager-size" style="width: 60px;"><select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-selected="20" tabindex="-98"><option class="bs-title-option" value=""></option><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="50">50</option><option value="100">100</option></select><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" title="Select page size"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">20</div></div> </div></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div><span class="kt-datatable__pager-detail">Showing 1 - 20 of 350</span></div>
+    </div>
+  </div>
+
+  <!--end: Datatable -->
+</div>

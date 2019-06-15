@@ -1,0 +1,28 @@
+.kt-datatable.kt-datatable--default{
+  &>.kt-datatable__table{
+    &>.kt-datatable__body{
+      .kt-datatable__row-detail{
+        display: none;
+      }
+      .kt-datatable__row{
+        .kt-datatable__toggle-detail .fa-caret-down{
+          display: none;
+        }
+        &.show-detail{
+          &+ .kt-datatable__row-detail{
+            display: table-row;
+          }
+
+          .kt-datatable__toggle-detail {
+            .fa-caret-down{
+              display: block;
+            }
+            .fa-caret-right{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
