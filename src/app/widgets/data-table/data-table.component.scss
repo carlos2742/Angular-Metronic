@@ -47,4 +47,19 @@
       }
     }
   }
+  &>.kt-datatable__pager>.kt-datatable__pager-nav>li>.kt-datatable__pager-link{
+    border: none;
+    border-radius: 50%;
+    &.kt-datatable__pager-link-number{
+      background-color: transparent;
+      &:hover{
+        background-color: #374afb;
+      }
+    }
+    &.kt-datatable__pager-link--active{
+      background-color: #374afb;
+    }
+  }
 }
+
+

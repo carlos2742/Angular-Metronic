@@ -9,11 +9,15 @@ import {any} from 'codelyzer/util/function';
 export class DataTableComponent implements OnInit {
 
   @Input() data;
+  dataSource: Array<any>;
+
+  tempArr: Array<any>;
+
   count: number;
   total: number;
   page: number;
   totalPages: number;
-  dataSource: Array<any>;
+  paginatorMessage: string;
 
   constructor() {
     this.count = 10;
@@ -34,7 +38,7 @@ export class DataTableComponent implements OnInit {
         { created: '2/5/2016', link: 'hola.me/3569', destination: 'health-ricard.com/bran', hit: 33000000, status: 'inactive', updated: '3/7/2016' },
         { created: '2/5/2016', link: 'hola.me/3569', destination: 'health-ricard.com/bran', hit: 33000000, status: 'inactive', updated: '3/7/2016' },
         { created: '2/5/2016', link: 'hola.me/3569', destination: 'health-ricard.com/bran', hit: 33000000, status: 'inactive', updated: '3/7/2016' },
-        { created: '2/5/2016', link: 'hola.me/3569', destination: 'health-ricard.com/bran', hit: 33000000, status: 'inactive', updated: '3/7/2016' }
+        { created: '2/5/2016', link: 'Carlos', destination: 'Carlos', hit: 33000000, status: 'active', updated: '3/7/2016' }
       ];
     }
     this.updateComponent();
@@ -57,18 +61,29 @@ export class DataTableComponent implements OnInit {
     }
   }
 
-  updateComponent() {
+  changePage(page) {
+    console.log('clock');
+    if (this.page !== page) {
+      this.page = page;
+      this.updateComponent();
+    }
+  }
+
+  private updateComponent() {
     this.updatePaginator();
     this.updateDataSource();
   }
 
   private updatePaginator() {
     this.total = this.data.length;
-    this.totalPages = this.total / this.count;
+    this.totalPages = Math.ceil(this.total / this.count);
+    this.paginatorMessage = `Displaying ${this.count * (this.page - 1) + 1} - ${this.count} of ${this.total} records`;
   }
 
   private updateDataSource() {
-    this.dataSource = this.data.slice(this.page - 1, this.count);
+    this.tempArr = Array(this.totalPages).fill(1);
+    const from = this.count * (this.page - 1);
+    this.dataSource = this.page === this.totalPages ? this.data.slice(from) : this.data.slice(from, this.count);
   }
 
 }
