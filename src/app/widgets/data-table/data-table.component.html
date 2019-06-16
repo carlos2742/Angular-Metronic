@@ -43,7 +43,7 @@
       <ng-container *ngFor="let item of dataSource" [ngTemplateOutlet]="rowTemplate" [ngTemplateOutletContext]="{item:item}"></ng-container>
       </tbody>
     </table>
-    <div class="kt-datatable__pager kt-datatable--paging-loaded">
+    <div class="kt-datatable__pager">
       <ul class="kt-datatable__pager-nav">
         <li><button title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first " (click)="changePage(1)" [disabled]="page === 1" [class.kt-datatable__pager-link--disabled]="page === 1"><i class="flaticon2-fast-back"></i></button></li>
         <li><button title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev " (click)="changePage(page - 1)" [disabled]="page === 1" [class.kt-datatable__pager-link--disabled]="page === 1"><i class="flaticon2-back"></i></button></li>
@@ -55,26 +55,24 @@
         </li>
       </ul>
       <div class="kt-datatable__pager-info">
-        <div class="dropdown bootstrap-select kt-datatable__pager-size" style="width: 60px;">
-          <select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-selected="20" tabindex="-98">
-            <option class="bs-title-option" value=""></option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-          <button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" title="Select page size">
-            <div class="filter-option">
+        <div ngbDropdown class="dropdown bootstrap-select kt-datatable__pager-size" style="width: 60px;" [placement]="'top'">
+          <button ngbDropdownToggle type="button" class="btn dropdown-toggle btn-light pr-2" data-toggle="dropdown" role="button" title="Select page size">
+            <div class="filter-option d-flex align-items-center">
               <div class="filter-option-inner">
-                <div class="filter-option-inner-inner">20</div>
+                <div class="filter-option-inner-inner">{{count}}</div>
+              </div>
+              <div class="ml-2">
+                <i class="flaticon2-down"></i>
+                <i class="flaticon2-up"></i>
               </div>
             </div>
           </button>
-          <div class="dropdown-menu " role="combobox">
-            <div class="inner show" role="listbox" aria-expanded="false" tabindex="-1">
-              <ul class="dropdown-menu inner show"></ul>
-            </div>
+          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
+            <div class="dropdown-item" (click)="changeCount(10)">10</div>
+            <div class="dropdown-item" (click)="changeCount(20)">20</div>
+            <div class="dropdown-item" (click)="changeCount(30)">30</div>
+            <div class="dropdown-item" (click)="changeCount(50)">50</div>
+            <div class="dropdown-item" (click)="changeCount(100)">100</div>
           </div>
         </div>
         <span class="kt-datatable__pager-detail">{{paginatorMessage}}</span>

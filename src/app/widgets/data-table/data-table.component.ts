@@ -62,9 +62,15 @@ export class DataTableComponent implements OnInit {
   }
 
   changePage(page) {
-    console.log('clock');
     if (this.page !== page) {
       this.page = page;
+      this.updateComponent();
+    }
+  }
+
+  changeCount(count) {
+    if (this.count !== count) {
+      this.count = count;
       this.updateComponent();
     }
   }
@@ -77,7 +83,7 @@ export class DataTableComponent implements OnInit {
   private updatePaginator() {
     this.total = this.data.length;
     this.totalPages = Math.ceil(this.total / this.count);
-    this.paginatorMessage = `Displaying ${this.count * (this.page - 1) + 1} - ${this.count} of ${this.total} records`;
+    this.paginatorMessage = `Displaying ${this.count * (this.page - 1) + 1} - ${this.count > this.total ? this.total : this.count} of ${this.total} records`;
   }
 
   private updateDataSource() {
