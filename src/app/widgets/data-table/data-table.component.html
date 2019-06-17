@@ -2,40 +2,43 @@
 
   <!--begin: Datatable -->
   <div class="kt-datatable kt-datatable--default kt-datatable--scroll kt-datatable--loaded" id="kt_datatable_latest_orders">
-    <table class="kt-datatable__table" style="display: block; min-height: 500px; max-height: 500px;">
+    <table #dataTable class="kt-datatable__table" style="display: block; min-height: 500px; max-height: 500px;">
       <thead class="kt-datatable__head">
       <tr class="kt-datatable__row" style="left: 0px;">
         <th class="kt-datatable__cell kt-datatable__toggle-detail d-xl-none"><span></span></th>
         <th data-field="RecordID" class="d-none d-sm-table-cell kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check">
           <span style="width: 80px;">
             <label class="kt-checkbox kt-checkbox--single kt-checkbox--all kt-checkbox--solid">
-              <input type="checkbox">&nbsp;<span></span>
+              <input type="checkbox" #allCheck ([ngModel])="allChecks" (change)="changeAllChecks(allCheck)">&nbsp;<span></span>
             </label>
           </span>
         </th>
         <th class="d-none  d-lg-table-cell kt-datatable__cell kt-datatable__cell--sort kt-datatable__cell--sorted" data-sort="asc">
-          <!--<span style="width: 150px;">-->
-            <!--Created-->
+          <span style="width: 100px;">
+            Created
             <!--<i class="flaticon2-arrow-up"></i>-->
-          <!--</span>-->
+          </span>
         </th>
         <th data-field="Link" data-autohide-disabled="false" class="kt-datatable__cell kt-datatable__cell--sort">
-          <span style="width: 150px;">Links</span>
+          <span style="width: 145px;">Links</span>
         </th>
         <th data-field="Destination" data-autohide-disabled="false" class="d-none d-xl-table-cell kt-datatable__cell kt-datatable__cell--sort">
-          <span style="width: 150px;">Destination</span>
+          <span style="width: 140px;">Destination</span>
         </th>
         <th data-field="Hit" data-autohide-disabled="false" class="d-none d-sm-table-cell kt-datatable__cell kt-datatable__cell--sort">
           <span style="width: 80px;">Hits</span>
         </th>
         <th data-field="Status" class="d-none d-sm-table-cell kt-datatable__cell kt-datatable__cell--sort">
-          <span style="width: 100px;">Status</span>
+          <span style="width: 95px;">Status</span>
         </th>
         <th data-field="UpdatedDate" class="d-none d-lg-table-cell kt-datatable__cell kt-datatable__cell--sort kt-datatable__cell--sorted" data-sort="asc">
-          <!--<span style="width: 100px;">Update Date<i class="flaticon2-arrow-up"></i></span>-->
+          <span style="width: 100px;">
+            Update Date
+            <!--<i class="flaticon2-arrow-up"></i>-->
+          </span>
         </th>
         <th data-field="Actions" data-autohide-disabled="false" class="kt-datatable__cell kt-datatable__cell--sort">
-          <span style="width: 80px;">Actions</span>
+          <span style="width: 90px;">Actions</span>
         </th>
       </tr>
       </thead>
@@ -92,7 +95,7 @@
   <tr data-row="0" class="kt-datatable__row" style="left: 0px;">
     <ng-container [ngTemplateOutlet]="tdToggleTemplate" [ngTemplateOutletContext]="{ containerClass: 'd-xl-none'}"></ng-container>
     <ng-container [ngTemplateOutlet]="tdCheckTemplate" [ngTemplateOutletContext]="{ width: '80px',containerClass: 'd-none d-sm-table-cell'}"></ng-container>
-    <ng-container [ngTemplateOutlet]="tdItemTemplate" [ngTemplateOutletContext]="{ width: '150px',fieldValue: item.created, containerClass: 'd-none d-lg-table-cell', innerClass: 'kt-font-bold' }"></ng-container>
+    <ng-container [ngTemplateOutlet]="tdItemTemplate" [ngTemplateOutletContext]="{ width: '100px',fieldValue: item.created, containerClass: 'd-none d-lg-table-cell', innerClass: 'kt-font-bold' }"></ng-container>
     <ng-container [ngTemplateOutlet]="tdItemTemplate" [ngTemplateOutletContext]="{ width: '150px',fieldValue: item.link, containerClass: '', innerClass: 'kt-font-bold' }"></ng-container>
     <ng-container [ngTemplateOutlet]="tdItemTemplate" [ngTemplateOutletContext]="{ width: '150px',fieldValue: item.destination, containerClass: 'd-none d-xl-table-cell', innerClass: 'kt-font-bold' }"></ng-container>
     <ng-container [ngTemplateOutlet]="tdItemTemplate" [ngTemplateOutletContext]="{ width: '80px',fieldValue: item.hit | abbreviateNumber, containerClass: 'd-none d-sm-table-cell', innerClass: 'kt-font-bold' }"></ng-container>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {any} from 'codelyzer/util/function';
 
 @Component({
@@ -9,9 +9,12 @@ import {any} from 'codelyzer/util/function';
 export class DataTableComponent implements OnInit {
 
   @Input() data;
+  @ViewChild('dataTable') dataTable: ElementRef;
   dataSource: Array<any>;
 
   tempArr: Array<any>;
+
+  allChecks: boolean;
 
   count: number;
   total: number;
@@ -65,6 +68,14 @@ export class DataTableComponent implements OnInit {
     if (this.page !== page) {
       this.page = page;
       this.updateComponent();
+    }
+  }
+
+  changeAllChecks(element) {
+    const currentValue = element.checked;
+    const allTableChecks = this.dataTable.nativeElement.querySelectorAll('input[type=checkbox]');
+    for (let i = 1; i < allTableChecks.length; i++) {
+      allTableChecks[i].checked = currentValue;
     }
   }
 
