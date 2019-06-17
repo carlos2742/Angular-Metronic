@@ -20,10 +20,15 @@ export class DataTableComponent implements OnInit {
   totalPages: number;
   paginatorMessage: string;
 
+  scrollPos: string;
+  scrollHeight: string;
+
   constructor() {
     this.count = 10;
     this.page = 1;
     this.dataSource = [];
+    this.scrollPos = '0px';
+    this.scrollHeight = '302px';
   }
 
   ngOnInit() {
@@ -66,8 +71,20 @@ export class DataTableComponent implements OnInit {
   changeCount(count) {
     if (this.count !== count) {
       this.count = count;
+      this.updateScrollHeigth();
       this.updateComponent();
     }
+  }
+
+  updateScroll(element) {
+    console.log(element.scrollTop);
+    this.scrollPos = `${element.scrollTop}px`;
+  }
+
+  private updateScrollHeigth() {
+    const c = this.count > this.total ? this.total : this.count;
+    const f = (302 * c / 10);
+    this.scrollHeight = `${Math.ceil(302 - ((302 * c / 10) - 302) - 22)}px`;
   }
 
   private updateComponent() {
@@ -80,7 +97,7 @@ export class DataTableComponent implements OnInit {
     this.totalPages = Math.ceil(this.total / this.count);
 
     const elements = this.count * (this.page - 1) + 1;
-    const part = this.count >= this.total || elements >= this.total ? this.total : this.count * this.page;
+    const part = (this.count >= this.total || elements >= this.total || this.count * this.page > this.total) ? this.total : this.count * this.page;
 
     this.paginatorMessage = `Displaying ${elements} - ${part} of ${this.total} records`;
   }
@@ -88,7 +105,8 @@ export class DataTableComponent implements OnInit {
   private updateDataSource() {
     this.tempArr = Array(this.totalPages).fill(1);
     const from = this.count * (this.page - 1);
-    this.dataSource = this.page === this.totalPages ? this.data.slice(from) : this.data.slice(from, this.count);
+    const to = this.count * this.page > this.total ? this.total : this.count * this.page ;
+    this.dataSource = this.data.slice(from, to);
   }
 
 }
