@@ -1,61 +1,65 @@
 <div class="kt-subheader kt-grid__item row" id="kt_subheader">
     <div class="col-xl-3 col-md-4 d-xl-flex justify-content-start">
-      <div ngbDropdown [placement]="'bottom-left'" class="dropdown dropdown-inline" data-placement="left">
-        <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" id="kt_dashboard_daterangepicker" data-placement="top" ngbTooltip="Select account">
-          <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title">Account:</span>&nbsp;
-          <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">All</span>
+      <div ngbDropdown [placement]="'bottom'" class="dropdown dropdown-inline" data-placement="left">
+        <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" data-placement="top" ngbTooltip="Select account">
+          <span class="kt-subheader__btn-daterange-title">Account:</span>&nbsp;
+          <span class="kt-subheader__btn-daterange-date">{{filters.account}}</span>
           <div class="kt-bg-info round-icon-container">
             <i class="la la-angle-down btn-label-white pr-0"></i>
           </div>
         </a>
         <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
-          <a href="javascript:;" class="dropdown-item">Today</a>
-          <a href="javascript:;" class="dropdown-item">Yesterday</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateAccountFilter('All')">All</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateAccountFilter('Account 1')">Account 1</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateAccountFilter('Account 2')">Account 2</a>
         </div>
       </div>
     </div>
     <div class="col-xl-3 col-md-4 d-xl-flex justify-content-center">
-      <div ngbDropdown [placement]="'bottom-left'" class="dropdown dropdown-inline" data-placement="left">
-        <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" id="kt_dashboard_daterangepicker" data-placement="top" ngbTooltip="Select domain">
-          <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title">Domains:</span>&nbsp;
-          <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">drinks.me</span>
+      <div ngbDropdown [placement]="'bottom'" class="dropdown dropdown-inline" data-placement="left">
+        <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" data-placement="top" ngbTooltip="Select domain">
+          <span class="kt-subheader__btn-daterange-title">Domains:</span>&nbsp;
+          <span class="kt-subheader__btn-daterange-date">{{filters.domain}}</span>
           <div class="kt-bg-info round-icon-container">
             <i class="la la-angle-down btn-label-white pr-0"></i>
           </div>
         </a>
         <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
-          <a href="javascript:;" class="dropdown-item">Today</a>
-          <a href="javascript:;" class="dropdown-item">Yesterday</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateDomainsFilter('All')">All</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateDomainsFilter('drinks.me/256')">drinks.me/256</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateDomainsFilter('hola.me/3569')">hola.me/3569</a>
         </div>
       </div>
     </div>
     <div class="col-xl-3 col-md-4 d-xl-flex justify-content-center">
-      <div ngbDropdown [placement]="'bottom-left'" class="dropdown dropdown-inline" data-placement="left">
+      <div ngbDropdown [placement]="'bottom'" class="dropdown dropdown-inline" data-placement="left">
         <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" id="kt_dashboard_daterangepicker" data-placement="top" ngbTooltip="Select user">
-          <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title">Users:</span>&nbsp;
-          <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">All Users</span>
+          <span class="kt-subheader__btn-daterange-title">Users:</span>&nbsp;
+          <span class="kt-subheader__btn-daterange-date">{{filters.user}}</span>
           <div class="kt-bg-info round-icon-container">
             <i class="la la-angle-down btn-label-white pr-0"></i>
           </div>
         </a>
         <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
-          <a href="javascript:;" class="dropdown-item">Today</a>
-          <a href="javascript:;" class="dropdown-item">Yesterday</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateUsersFilter('All')">All</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateUsersFilter('User 1')">User 1</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateUsersFilter('User 2')">User 2</a>
         </div>
       </div>
     </div>
     <div class="col-xl-3 col-md-4 d-xl-flex justify-content-end">
-      <div ngbDropdown [placement]="'bottom-left'" class="dropdown dropdown-inline" data-placement="left">
-        <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" id="kt_dashboard_daterangepicker" data-placement="top" ngbTooltip="Select tag">
-          <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title">Tags:</span>&nbsp;
-          <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">All tags</span>
+      <div ngbDropdown [placement]="'bottom'" class="dropdown dropdown-inline" data-placement="left">
+        <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" data-placement="top" ngbTooltip="Select tag">
+          <span class="kt-subheader__btn-daterange-title">Tags:</span>&nbsp;
+          <span class="kt-subheader__btn-daterange-date">{{filters.tag}}</span>
           <div class="kt-bg-info round-icon-container">
             <i class="la la-angle-down btn-label-white pr-0"></i>
           </div>
         </a>
         <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
-          <a href="javascript:;" class="dropdown-item">Today</a>
-          <a href="javascript:;" class="dropdown-item">Yesterday</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateTagsFilter('All')">All</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateTagsFilter('Tag 1')">Tag 1</a>
+          <a href="javascript:;" class="dropdown-item" (click)="updateTagsFilter('Tag 2')">Tag 2</a>
         </div>
       </div>
     </div>

@@ -2,17 +2,17 @@
   <div class="kt-subheader__toolbar kt-margin-r-10">
     <div class="kt-subheader__wrapper">
 
-      <div ngbDropdown [placement]="'bottom-left'" class="dropdown dropdown-inline" data-placement="left">
+      <div ngbDropdown [placement]="'bottom'" class="dropdown dropdown-inline" data-placement="left">
         <a ngbDropdownToggle href="javascript:;" class="rounded-20 btn kt-subheader__btn-daterange pr-2" id="kt_dashboard_daterangepicker" data-placement="top" ngbTooltip="Select daterange">
-          <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title">Today</span>&nbsp;
-          <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">{{today | date:'MMM dd'}}</span>
+          <span class="kt-subheader__btn-daterange-title" id="kt_dashboard_daterangepicker_title">{{filter.label}}</span>&nbsp;
+          <span class="kt-subheader__btn-daterange-date" id="kt_dashboard_daterangepicker_date">{{filter.date | date:'MMM dd'}}</span>
           <div class="kt-bg-info round-icon-container">
             <i class="la la-angle-down btn-label-white pr-0"></i>
           </div>
         </a>
         <div ngbDropdownMenu class="dropdown-menu dropdown-menu-left">
-          <a href="javascript:;" class="dropdown-item">Today</a>
-          <a href="javascript:;" class="dropdown-item">Yesterday</a>
+          <a href="javascript:;" class="dropdown-item" (click)="today()">Today</a>
+          <a href="javascript:;" class="dropdown-item" (click)="yesterday()">Yesterday</a>
         </div>
       </div>
     </div>
