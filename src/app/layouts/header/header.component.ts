@@ -12,11 +12,17 @@ export class HeaderComponent implements OnInit {
   selected: string;
   openItem: string;
 
+  logo: string;
+  logoSmall: string;
+
   constructor() {
     this.showMobileMenu = false;
     this.showTopBar = false;
     this.selected = 'dash';
     this.openItem = '';
+
+    this.logo = './assets/media/logos/logo-4.png';
+    this.logoSmall = './assets/media/logos/logo-4-sm.png';
   }
 
   ngOnInit() {
