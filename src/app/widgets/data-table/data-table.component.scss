@@ -1,8 +1,33 @@
 .kt-datatable.kt-datatable--default{
   &>.kt-datatable__table{
+    position: relative;
+
+    //&:hover{
+    //  .scroll-rail{
+    //    opacity: 1;
+    //  }
+    //}
+    .scroll-rail{
+      transition: all 0.5s linear;
+      width: 5px;
+      height: 446px;
+      position: absolute;
+      right: 0;
+      top: 52px;
+      opacity: 0;
+      .scroll{
+        position: absolute;
+        width: 5px;
+        background-color: #97afc8;
+        opacity: 0.5;
+        border-radius: 2px;
+      }
+    }
     &>.kt-datatable__body{
       max-height: 446px;
       overflow-y: auto;
+      margin-right: -15px;
+
       .kt-datatable__row-detail{
         display: none;
       }

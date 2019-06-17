@@ -42,9 +42,12 @@
         </th>
       </tr>
       </thead>
-      <tbody class="kt-datatable__body">
+      <tbody class="kt-datatable__body" (scroll)="updateScroll(tbody)" #tbody>
       <ng-container *ngFor="let item of dataSource" [ngTemplateOutlet]="rowTemplate" [ngTemplateOutletContext]="{item:item}"></ng-container>
       </tbody>
+      <div class="scroll-rail">
+        <div class="scroll" [style.top]="scrollPos" [style.height]="scrollHeight"></div>
+      </div>
     </table>
     <div class="kt-datatable__pager">
       <ul class="kt-datatable__pager-nav">
