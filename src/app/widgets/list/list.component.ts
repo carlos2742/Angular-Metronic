@@ -17,24 +17,6 @@ export class ListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    if (!this.data) {
-      this.data = [
-        {
-          title: 'Total Hits',
-          value: 370000,
-          color: 'kt-font-info'
-        }, {
-          title: 'Unique Visitors',
-          value: 167000,
-          color: 'kt-font-danger'
-        }, {
-          title: 'Active Links',
-          value: 392,
-          color: 'kt-font-success'
-        }
-      ];
-    }
-  }
+  ngOnInit() {}
 
 }

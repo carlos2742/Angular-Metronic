@@ -1,8 +1,8 @@
 <div ngbDropdown class="kt-header__topbar-item kt-header__topbar-item--user">
   <div ngbDropdownToggle class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,10px" aria-expanded="false">
     <span class="kt-header__topbar-welcome">Hello,</span>
-    <span class="kt-header__topbar-username">Charles.</span>
-    <img class="" alt="Pic" src="./assets/media/users/300_12.jpg">
+    <span class="kt-header__topbar-username">{{user.name}}.</span>
+    <img class="" alt="Pic" [attr.src]="user.image">
 
     <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
     <!--<span class="kt-badge kt-badge&#45;&#45;username kt-badge&#45;&#45;unified-success kt-badge&#45;&#45;lg kt-badge&#45;&#45;rounded kt-badge&#45;&#45;bold kt-hidden-">S</span>-->
@@ -12,16 +12,16 @@
     <!--begin: Head -->
     <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(./assets/media/misc/bg-1.jpg)">
       <div class="kt-user-card__avatar">
-        <img alt="Pic" src="./assets/media/users/300_12.jpg">
+        <img alt="Pic" [attr.src]="user.image">
 
         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
         <!--<span class="kt-badge kt-badge&#45;&#45;lg kt-badge&#45;&#45;rounded kt-badge&#45;&#45;bold kt-font-success">S</span>-->
       </div>
       <div class="kt-user-card__name">
-        Charles Brown
+        {{user.name+' '+user.lastName}}
       </div>
       <div class="kt-user-card__badge">
-        <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
+        <span class="btn btn-success btn-sm btn-bold btn-font-md">{{user.messages.count}} messages</span>
       </div>
     </div>
 
@@ -90,13 +90,13 @@
             Billing
           </div>
           <div class="kt-notification__item-time">
-            billing &amp; statements <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill kt-badge--rounded">2 pending</span>
+            billing &amp; statements <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill kt-badge--rounded">{{user.billings.pending}} pending</span>
           </div>
         </div>
       </a>
       <div class="kt-notification__custom kt-space-between">
-        <a href="demo2/custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
-        <a href="demo2/custom/user/login-v2.html" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a>
+        <a class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+        <a class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a>
       </div>
     </div>
 

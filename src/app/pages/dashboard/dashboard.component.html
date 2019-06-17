@@ -1,17 +1,17 @@
 <div class="row mb-4">
   <div class="col-xl-4">
     <div class="kt-portlet kt-portlet--height-fluid">
-      <app-list></app-list>
+      <app-list [data]="list"></app-list>
     </div>
   </div>
   <div class="col-xl-4">
     <div class="kt-portlet kt-portlet--height-fluid">
-      <app-charts [title]="'Hits Evolution'" [desc]="'Over the last 14 Days'" [type]="'bar'"></app-charts>
+      <app-charts [title]="'Hits Evolution'" [desc]="'Over the last 14 Days'" [type]="'bar'" [data]="statistics.hitEvolution"></app-charts>
     </div>
   </div>
   <div class="col-xl-4">
     <div class="kt-portlet kt-portlet--height-fluid">
-      <app-charts [title]="'Country Split'" [type]="'doughnut'"></app-charts>
+      <app-charts [title]="'Country Split'" [type]="'doughnut'" [data]="statistics.countries"></app-charts>
     </div>
   </div>
 </div>
@@ -19,7 +19,7 @@
 <div class="row mt-3">
   <div class="col-xl-12">
     <div class="kt-portlet kt-portlet--height-fluid kt-portlet--mobile ">
-      <app-data-table></app-data-table>
+      <app-data-table [data]="dataTable"></app-data-table>
     </div>
   </div>
 </div>

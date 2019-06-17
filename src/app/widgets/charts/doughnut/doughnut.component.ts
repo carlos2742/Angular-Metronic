@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import { Chart } from 'chart.js';
+import {CHART_TYPES} from '../charts.component';
 
 @Component({
   selector: 'app-doughnut',
@@ -17,25 +18,11 @@ export class DoughnutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (!this.data) {
-      this.data = {
-        labels: ['France', 'India', 'China', 'Unite State', 'Others'],
-        datasets: [
-          {
-            ktBackgroundColor: ['kt-bg-success', 'kt-bg-warning', 'kt-bg-danger', 'kt-bg-info', 'kt-bg-brand'],
-            backgroundColor: ['#1dc9b7', '#ffb822', '#fd397a', '#5578eb', '#374afb'],
-            data: [
-              15, 20, 25, 30, 25
-            ]
-          }
-        ]
-      };
-    }
     this.initChartJS();
   }
 
   private initChartJS() {
-    this.chartParams['type'] = 'doughnut';
+    this.chartParams['type'] = CHART_TYPES.DOUGHNUT;
     this.chartParams['options']['cutoutPercentage'] = 70;
     this.chartParams['options']['legendCallback'] = this.buildLegend;
     this.chartParams['data'] = this.data;

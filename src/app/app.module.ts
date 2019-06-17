@@ -20,6 +20,7 @@ import { SubheaderComponent } from './layouts/subheader/subheader.component';
 import { FiltersComponent } from './widgets/filters/filters.component';
 import { DataTableComponent } from './widgets/data-table/data-table.component';
 import { RowToggleDetailDirective } from './widgets/data-table/directives/row-toggle-detail.directive';
+import {MockService} from './services/mock.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { RowToggleDetailDirective } from './widgets/data-table/directives/row-to
     AppRoutingModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [MockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
