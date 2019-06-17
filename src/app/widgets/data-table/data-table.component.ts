@@ -80,7 +80,7 @@ export class DataTableComponent implements OnInit {
     this.totalPages = Math.ceil(this.total / this.count);
 
     const elements = this.count * (this.page - 1) + 1;
-    const part = this.count >= this.total || elements >= this.total ? this.total : this.count * this.page;
+    const part = (this.count >= this.total || elements >= this.total || this.count * this.page > this.total) ? this.total : this.count * this.page;
 
     this.paginatorMessage = `Displaying ${elements} - ${part} of ${this.total} records`;
   }
@@ -88,7 +88,8 @@ export class DataTableComponent implements OnInit {
   private updateDataSource() {
     this.tempArr = Array(this.totalPages).fill(1);
     const from = this.count * (this.page - 1);
-    this.dataSource = this.page === this.totalPages ? this.data.slice(from) : this.data.slice(from, this.count);
+    const to = this.count * this.page > this.total ? this.total : this.count * this.page ;
+    this.dataSource = this.data.slice(from, to);
   }
 
 }
