@@ -20,15 +20,10 @@ export class DataTableComponent implements OnInit {
   totalPages: number;
   paginatorMessage: string;
 
-  scrollPos: string;
-  scrollHeight: string;
-
   constructor() {
     this.count = 10;
     this.page = 1;
     this.dataSource = [];
-    this.scrollPos = '0px';
-    this.scrollHeight = '302px';
   }
 
   ngOnInit() {
@@ -71,20 +66,8 @@ export class DataTableComponent implements OnInit {
   changeCount(count) {
     if (this.count !== count) {
       this.count = count;
-      this.updateScrollHeigth();
       this.updateComponent();
     }
-  }
-
-  updateScroll(element) {
-    console.log(element.scrollTop);
-    this.scrollPos = `${element.scrollTop}px`;
-  }
-
-  private updateScrollHeigth() {
-    const c = this.count > this.total ? this.total : this.count;
-    const f = (302 * c / 10);
-    this.scrollHeight = `${Math.ceil(302 - ((302 * c / 10) - 302) - 22)}px`;
   }
 
   private updateComponent() {
