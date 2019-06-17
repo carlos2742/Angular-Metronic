@@ -42,7 +42,7 @@
         </th>
       </tr>
       </thead>
-      <tbody class="kt-datatable__body" (scroll)="updateScroll(tbody)" #tbody>
+      <tbody class="kt-datatable__body">
       <ng-container *ngFor="let item of dataSource" [ngTemplateOutlet]="rowTemplate" [ngTemplateOutletContext]="{item:item}"></ng-container>
       </tbody>
     </table>
